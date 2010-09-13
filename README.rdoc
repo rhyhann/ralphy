@@ -1,6 +1,13 @@
 = ralphy
 
-Description goes here.
+Ralphy is a Ruby SVG library, built on Nokogiri.
+
+== The Prestige
+
+    svg = Ralphy::Image.new(:width => 300, :height => 200)
+    circle = Ralphy::Circle.new(:r => 100, :cx => svg.width/2, :cy => svg.height/2)
+    circle << Ralphy::Fill.new("#aeb219") # Automatically fills the circle and adds both of them in a <g>
+    rect = Ralphy::Rectangle.new(:)
 
 == Note on Patches/Pull Requests
  

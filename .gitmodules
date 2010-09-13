@@ -1,0 +1,3 @@
+[submodule "vendor/rdom"]
+	path = vendor/rdom
+	url = http://github.com/svenfuchs/rdom.git
