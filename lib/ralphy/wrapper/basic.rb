@@ -1,5 +1,5 @@
 module Ralphy
-  class BasicRectangle < Primitive
+  class BasicRect < Primitive
     tag :rect
     requires   :width, :height
   end
