@@ -4,10 +4,24 @@ Ralphy is a Ruby SVG library, built on Nokogiri.
 
 == The Prestige
 
+Future:
+
     svg = Ralphy::Image.new(:width => 300, :height => 200)
-    circle = Ralphy::Circle.new(:r => 100, :cx => svg.width/2, :cy => svg.height/2)
-    circle << Ralphy::Fill.new("#aeb219") # Automatically fills the circle and adds both of them in a <g>
-    rect = Ralphy::Rectangle.new(:)
+    circle = Ralphy::Circle.new(:cx => svg.width/2, :cy => svg.height/2)
+    circle << Ralphy::CSS.new(:fill => '#aeb619') # Neatly define your CSS. Separate your style from your content.
+    svg << circle
+    svg.to_svg # ArgumentError: no radius!
+    circle.r = 100
+    svg.to_svg # Awesome SVG + CSS one-file image
+
+Present:
+
+    svg = Ralphy::BasicImage.new(:width => 300, :height => 200)
+    circle = Ralphy::BasicCircle.new(:r => 100, :cx => svg[:width].to_i/2, :cy => svg[:height].to_i/2)
+    rect = Ralphy::BasicRect.new(:x => 20, :y => 30, :width => 40, :height => 50)
+    svg << circle << rect
+
+    For more informations, check lib/ralphy/wrapper and its specs
 
 == Note on Patches/Pull Requests
  
